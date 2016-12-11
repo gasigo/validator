@@ -27,7 +27,3 @@ Validator.IsValidCNPJ(cnpj) returns a bool
 ## Credits
 
 Gabriel Gomes
-
-## License
-
-TODO: Write license
