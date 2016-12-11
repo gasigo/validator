@@ -1,14 +1,20 @@
 # Validator for Golang
 
-TODO: Write a project description
+A package with validation funcs written in golang.
 
 ## Installation
 
-TODO: Describe the installation process
+Add the package to the desired file.
 
 ## Usage
 
-TODO: Write usage instructions
+Functions: 
+
+Validator.IsValidEmail(email) returns a bool
+
+Validator.IsValidCPF(cpf) returns a bool
+
+Validator.IsValidCNPJ(cnpj) returns a bool
 
 ## Contributing
 
@@ -18,13 +24,9 @@ TODO: Write usage instructions
 4. Push to the branch: `git push origin my-new-feature`
 5. Submit a pull request :D
 
-## History
-
-TODO: Write history
-
 ## Credits
 
-TODO: Write credits
+Gabriel Gomes
 
 ## License
 
