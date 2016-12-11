@@ -24,10 +24,8 @@ func IsValidEmail(email string) bool {
 }
 
 func IsValidCPF(cpf string) bool {
-
 	multFactors1 := [9]int{10, 9, 8, 7, 6, 5, 4, 3, 2}
 	multFactors2 := [10]int{11, 10, 9, 8, 7, 6, 5, 4, 3, 2}
-
 	cpf = strings.Trim(cpf, " ")
 	cpf = strings.Replace(cpf, ".", "", -1)
 	cpf = strings.Replace(cpf, "-", "", -1)
@@ -48,7 +46,6 @@ func IsValidCPF(cpf string) bool {
 	}
 
 	rest := sum % 11
-
 	if rest < 2 {
 		rest = 0
 	} else {
@@ -56,7 +53,6 @@ func IsValidCPF(cpf string) bool {
 	}
 
 	smallCPF2 := append(smallCPF1, rest)
-
 	sum = 0
 
 	for i := 0; i < 10; i++ {
@@ -64,7 +60,6 @@ func IsValidCPF(cpf string) bool {
 	}
 
 	rest = sum % 11
-
 	if rest < 2 {
 		rest = 0
 	} else {
@@ -72,7 +67,6 @@ func IsValidCPF(cpf string) bool {
 	}
 
 	intCPF := append(smallCPF2, rest)
-
 	finalCPF := []string{}
 
 	for i := range intCPF {
@@ -82,7 +76,6 @@ func IsValidCPF(cpf string) bool {
 	}
 
 	result := strings.Join(finalCPF, "")
-
 	return cpf == result
 }
 
@@ -101,7 +94,6 @@ func IsValidCNPJ(cnpj string) bool {
 
 	smallCNPJ1, error := sliceAtoi(strings.Split(cnpj[0:12], ""))
 	sum := 0
-
 	if error != nil {
 		return false
 	}
@@ -111,7 +103,6 @@ func IsValidCNPJ(cnpj string) bool {
 	}
 
 	rest := sum % 11
-
 	if rest < 2 {
 		rest = 0
 	} else {
@@ -119,7 +110,6 @@ func IsValidCNPJ(cnpj string) bool {
 	}
 
 	smallCNPJ2 := append(smallCNPJ1, rest)
-
 	sum = 0
 
 	for i := 0; i < 13; i++ {
@@ -127,7 +117,6 @@ func IsValidCNPJ(cnpj string) bool {
 	}
 
 	rest = sum % 11
-
 	if rest < 2 {
 		rest = 0
 	} else {
@@ -135,7 +124,6 @@ func IsValidCNPJ(cnpj string) bool {
 	}
 
 	intCNPJ := append(smallCNPJ2, rest)
-
 	finalCNPJ := []string{}
 
 	for i := range intCNPJ {
@@ -145,6 +133,5 @@ func IsValidCNPJ(cnpj string) bool {
 	}
 
 	result := strings.Join(finalCNPJ, "")
-
 	return cnpj == result
 }
