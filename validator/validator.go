@@ -1,7 +1,6 @@
 package Validator
 
 import (
-	"fmt"
 	"regexp"
 	"strconv"
 	"strings"
@@ -20,7 +19,6 @@ func sliceAtoi(sa []string) ([]int, error) {
 }
 
 func IsValidEmail(email string) bool {
-	fmt.Println("entrei no validate")
 	regex := regexp.MustCompile(`^[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,4}$`)
 	return regex.MatchString(email)
 }
@@ -34,8 +32,6 @@ func IsValidCPF(cpf string) bool {
 	cpf = strings.Replace(cpf, ".", "", -1)
 	cpf = strings.Replace(cpf, "-", "", -1)
 
-	fmt.Println(cpf)
-
 	if len(cpf) != 11 {
 		return false
 	}
@@ -44,7 +40,6 @@ func IsValidCPF(cpf string) bool {
 	sum := 0
 
 	if error != nil {
-		fmt.Println(error)
 		return false
 	}
 
@@ -108,7 +103,6 @@ func IsValidCNPJ(cnpj string) bool {
 	sum := 0
 
 	if error != nil {
-		fmt.Println(error)
 		return false
 	}
 
